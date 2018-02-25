@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="prueba.android.prueba.MainActivity"
+    android:orientation="vertical"
+    android:gravity="center">
+
+
+    <TextView
+        android:id="@+id/inicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Inicio"
+        android:textSize="30dp" />
+    <android.support.v4.widget.Space
+        android:layout_width="0dp"
+        android:layout_height="20dp"/>
+
+    <Button
+        android:id="@+id/registrar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Registrar"
+        android:onClick="Registrar"/>
+
+    <Button
+        android:id="@+id/leer"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Leer" />
+
+    <Button
+        android:id="@+id/modificar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Modificar" />
+
+    <Button
+        android:id="@+id/creditos"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Creditos"
+        android:onClick="Creditos"/>
+
+    <Button
+        android:id="@+id/salir"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Salir"
+        android:onClick="Salir"/>
+
+
+</LinearLayout>
