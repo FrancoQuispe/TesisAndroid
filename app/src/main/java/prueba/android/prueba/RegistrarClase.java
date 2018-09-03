@@ -9,7 +9,6 @@ import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.Ndef;
 import android.os.Bundle;
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -26,7 +25,6 @@ import android.widget.Toast;
  * Created by Franco on 9/01/2018.
  */
 
-@SuppressLint("NewApi")
 public class RegistrarClase extends Activity
 {
     NfcAdapter adapter;
@@ -87,7 +85,7 @@ public class RegistrarClase extends Activity
         ndef.writeNdefMessage(message);
         ndef.close();
     }
-    @SuppressLint("NewApi") private NdefRecord createRecord(String text) throws UnsupportedEncodingException{
+    private NdefRecord createRecord(String text) throws UnsupportedEncodingException{
         String lang = "us";
         byte[] textBytes = text.getBytes();
         byte[] langBytes = lang.getBytes("US-ASCII");
@@ -105,17 +103,22 @@ public class RegistrarClase extends Activity
         return recordNFC;
 
     }
-    @SuppressLint("NewApi") protected void onNewIntent(Intent intent){
+
+    @Override
+    protected void onNewIntent(Intent intent){
         if(NfcAdapter.ACTION_TAG_DISCOVERED.equals(intent.getAction())){
             myTag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
             Toast.makeText(this,"tag detectado", Toast.LENGTH_SHORT).show();
         }
     }
 
+    @Override
     public void onPause(){
         super.onPause();
         WriteModeOff();
     }
+
+    @Override
     public void onResume(){
         super.onResume();
         WriteModeOn();
@@ -126,12 +129,12 @@ public class RegistrarClase extends Activity
         NdefMessage ndefMessage = new NdefMessage(new NdefRecord[]{ndefRecord});
         return ndefMessage;
     }
-    @SuppressLint("NewApi") private void WriteModeOn(){
+    private void WriteModeOn(){
         writeMode = true;
         adapter.enableForegroundDispatch(this, pendingIntent, writeTagFilters, null);
     }
 
-    @SuppressLint("NewApi") private void WriteModeOff(){
+    private void WriteModeOff(){
         writeMode = false;
         adapter.disableForegroundDispatch(this);
     }

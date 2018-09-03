@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".RegistrarClase"></activity>
         <activity android:name=".CreditosClase"
-            android:theme="@style/Base.Animation.AppCompat.Dialog"></activity>
+                  android:theme="@style/Base.Animation.AppCompat.Dialog"></activity>
+        <activity android:name=".LeerClase"></activity>
     </application>
     <uses-permission android:name="android.permission.NFC"></uses-permission>
 

@@ -31,7 +31,8 @@
         android:id="@+id/leer"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Leer" />
+        android:text="Leer"
+        android:onClick="Leer"/>
 
     <Button
         android:id="@+id/modificar"
